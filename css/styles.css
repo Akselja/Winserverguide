@@ -1,0 +1,306 @@
+/*fonts*/
+@font-face {
+    font-family: "Josefin Slab";
+    src: url(../fonts/JosefinSlab-LightItalic.ttf);
+}
+@font-face {
+    font-family: "Aegreya Sans";
+    src: url(../fonts/AlegreyaSansSC-LightItalic.ttf);
+}
+@font-face {
+    font-family: "Enriqueta";
+    src: url(../fonts/Enriqueta-Regular.ttf);
+}
+
+/*general styles*/
+h1 {
+    font-size: 4rem;
+    font-family: "Josefin Slab";
+}
+h2 {
+    font-size: 3.5rem;
+    font-family: "Aegreya Sans";
+}
+h3 {
+    font-size: 2.1rem;
+    font-family: "Aegreya Sans"; 
+}
+p, a, li, label {
+    font-size: 1.5rem;
+    font-family: "Enriqueta";
+    line-height: 1.1;
+}
+
+@media screen and (max-width: 730px) {
+    /*welcome to media tag hell*/
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 1.3rem !important;
+    }
+    iframe {
+        width: 95%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 560px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2.25rem;
+    }
+    h3 {
+        font-size: 1.7rem;
+    }
+    p, a, li, label {
+        font-size: 1.2rem;
+    }
+    button {
+        font-size: 1.1rem !important;
+    }
+}
+@media screen and (max-width: 474px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    #nav {
+        justify-content: center;
+    }
+    .wall {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 390px) {
+    h1 {
+        font-size: 1.8rem;
+        padding-top: 10px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    p, a, li, label {
+        font-size: 1rem;
+    }
+    button {
+        font-size: 1.1rem !important;
+    }
+    .navTitle {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 290px) {
+    .navTitle {
+        font-size: 1.2rem;
+    }
+}
+button {
+    font-size: 1.4rem;
+    font-family: "Aegreya Sans";
+    background-color: #76d4e4;
+    border-radius: 10px;
+    border: none;
+    padding: 7px 7px 5px 7px;
+    transition: background-color .3s;
+}
+button:hover {
+    cursor:pointer;
+    background-color: white;
+    outline: solid 1px;
+    transition: background-color .3s;
+}
+button:active {
+    outline: solid 3px blue;
+}
+
+/*nav styles*/
+#nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 20px 1rem 20px 1rem;
+    border-bottom: solid lightgray 1px;
+    background-color: white;
+}
+.navTitle {
+    padding-top: 2px;
+    user-select: none;
+}
+.buttonDiv {
+    display: flex;
+}
+.gap {
+    margin-left: 20px;
+}
+.wall {
+    margin-left: 19px;
+    display: inline;
+    padding: 10px 0 10px 0;
+    border-left: solid rgb(180, 180, 180) 2px;
+}
+.questionDiv {
+    display: none;
+}
+.selectedQuestion {
+    display: block;
+}
+
+/*quiz*/
+#quiz {
+    display: none;
+    z-index: 4;
+    position: fixed;
+    padding: 30px;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background-color: white;
+    border: solid black 3px; 
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.quizSelected {
+    display: flex !important;
+}
+.quizNext {
+    margin-top: 10px;
+}
+.quizBackground {
+    display: none;
+    z-index: 3;
+    position: fixed;
+    padding: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 50%;
+}
+.quizTitle {
+    margin-top: 30px;
+}
+.questionDiv {
+    align-items: centers;
+}
+.answerDiv {
+    margin: 10px 20% 10px;
+}
+@media screen and (max-width: 800px) {
+    .answerDiv {
+        margin: 10px 0 10px;
+    }
+}
+
+/*sidebar*/
+.sectionSidebar {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    padding-top: 80px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: white;
+    border-right: solid 3px lightgray;
+}
+.sidebarButton {
+    margin: 10px 20px;
+}
+.sidebarSelected {
+    display: flex !important;
+    animation: .4s ease-in-out slidein;
+}
+@keyframes slidein {
+    from {
+        transform: translateX(-120%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+.sidebarRemoveAnimation {
+    animation: .4s ease-in-out slideout;
+}
+@keyframes slideout {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-120%);
+    }
+}
+
+/*main styles*/
+#top {
+    margin-top: 64px;
+    padding: 3rem 2rem 10px 2rem;
+    margin-bottom: 2rem;
+}
+.sections {
+    padding: 0 2rem 0px 2rem;
+    display: none;
+}
+.sectionSelected {
+    display: block !important;
+}
+.instruction {
+    margin: 10px 0 40px 0;
+}
+.img {
+    border: solid 2px;
+    margin-top: 7px;
+}
+@media screen and (max-width: 660px) {
+    .img {
+        width: 100%;
+    }
+}
+.paragraph {
+    margin-right: 45%;
+}
+@media screen and (max-width: 880px) {
+    .paragraph {
+        margin-right: 0;
+    }
+}
+.ipGuide {
+    margin: 30px 0 30px 0;
+}
+
+/*footer styles*/
+.footerTop {
+    border-top: solid lightgray 1px;
+    padding: 25px;
+    display: flex;
+}
+.footerBottom {
+    border-top: solid lightgray 1px;
+    padding: 50px;
+}
+.hide {
+    display: none !important;
+}

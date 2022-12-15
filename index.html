@@ -1,0 +1,594 @@
+<!--this project made me lose it :)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--ico-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
+    <link rel="manifest" href="./ico/site.webmanifest">
+
+    <!--styles-->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!--scripts-->
+    <script src="./js/sections.js" defer></script>
+    <script src="./js/quiz.js" defer></script>
+
+    <title>Aksels Windows Server Guide</title>
+</head>
+<body>
+    <header>
+        <!--Navbar-->
+        <div id="nav">
+            <h3 class="navTitle">Windows Server</h3>
+            <div class="buttonDiv">
+                <div class="wall"></div>
+                <!--Sidebar Toggle button-->
+                <button class="gap sectionButton">Seksjon</button>
+            </div>
+        </div>
+        <!--Sidebar-->
+        <div class="sectionSidebar">
+            <button class="sidebarButton btn1">Del 1: Server VM Setup</button>
+            <button class="sidebarButton btn2">Del 2: Windows Setup</button>
+            <button class="sidebarButton btn3">Del 3: Begynn Serverkonfig</button>
+            <button class="sidebarButton btn4">Del 4: DNS og AD DS</button>
+            <button class="sidebarButton btn5">Del 5: DHCP Server</button>
+            <button class="sidebarButton btn6">Del 6: Klientmaskin</button>
+            <button class="sidebarButton btn7">Del 7: IIS og FTP Server</button>
+            <button class="sidebarButton btn8">Del 8: FTP Tilkobling</button>
+        </div>
+    </header>
+
+    <main>
+        <!--top-->
+        <section id="top">
+            <h1>Windows Server Guide</h1>
+            <p>Dette er en guide på hvordan man setter opp Windows Server 2019 med VMware VSphere.</p>
+        </section>
+
+
+        <!--------Del 1-------->
+        <section id="part1" class="sections sectionSelected">
+            <h3>Del 1: Server VM Setup</h3>
+            <div class="instruction">
+                <p class="paragraph">Trykk New Virtual Machine.</p>
+                <img class="img" src="./img/img1.png" alt="">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk Next til du kommer til Select a name and folder, fyll det ut og felg Next.</p>
+                <img class="img" src="./img/img2.png" alt="">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg din ønskede compute resource og trykk next.</p>
+                <img class="img" src="./img/img3.png" alt="">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg din ønskede storage og trykk next, du kan hoppe over compatibility fordi den er satt på det anbefalte.</p>
+                <img class="img" src="./img/img4.png" alt="">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Deretter velg windows, og bytt til Microsoft Windows Server 2016.</p>
+                <img src="./img/img5.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk på dropdown-menyen ved New Network og velg browse.</p>
+                <img src="./img/img6.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg ditt ønskede nettverk.</p>
+                <img src="./img/img7.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Åpne dropdown-menyen under New CD/DVD Drive og velg Content Library ISO File</p>
+                <img src="./img/img8.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg windows_server_2019 og trykk ok.</p>
+                <img src="./img/img9.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Deretter huk av på Connect At Power On.</p>
+                <img src="./img/img10.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Åpne New Hard Disk, velg dropdown-menyen under Disk Provisioning og velg Thin Provision, uten dette vil ikke VM-en starte ordentlig.</p>
+                <img src="./img/img11.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå må du velge VM Options</p>
+                <img src="./img/img12.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Så under Boot Options velg force EFI/BIOS boot, uten dette vil ikke windows EFI/BIOS filen kunne bli bootet. Deretter trykk next til du er ferdig.</p>
+                <img src="./img/img13.png" alt="" class="img">
+            </div>
+        </section>
+
+
+        <!--------Del 2-------->
+        <section id="part2" class="sections">
+            <h3>Del 2: Windows Setup</h3>
+            <div class="instruction">
+                <p class="paragraph">Start VM-en og trykk boksen med forhåndsvisning.</p>
+                <img src="./img/img14.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg EFI VMware Virtual SATA CDROM Drive og trykk enter raskt igjen, ser du at den laster inn etter dette er du vellykket.</p>
+                <img src="./img/img16.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Etter litt lasting vil du komme til denne skjermen, velg ditt ønskede språk, og trykk next.</p>
+                <img src="./img/img17.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Deretter velg Install Now.</p>
+                <img src="./img/img18.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Med mindre du har en produktnøkkel, velg I don't have a product key.</p>
+                <img src="./img/img19.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Deretter velg Windows Server 2019 Datacenter (Desktop Experience) og trykk next.</p>
+                <img src="./img/img20.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå velg I accept the liscense terms og trykk next.</p>
+                <img src="./img/img21.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg Custom: Install Windows only, hvis du har filer du må beholde på maskinen, velg det heller Upgrade: Install Windows and keep files, settings, and applications.</p>
+                <img src="./img/img22.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Hvis du valgte å installere bare windows, velg din ønskede disk å installere på, så trykk next. Deretter vil windows bli installert og det kan ta litt tid.</p>
+                <img src="./img/img23.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Når du er ferdig, lag et passord for Administrator brukeren din, dette skriver du hver gang du logger på maskinen.</p>
+                <img src="./img/img24.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå vil du komme til en innloggingsskjerm, trykk Send Ctrl + Alt + Delete for å forsette</p>
+                <img src="./img/img25.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå skriv inn passordet du lagde for Administrator.</p>
+            </div>
+        </section>
+        
+
+        <!--------Del 3-------->
+        <section id="part3" class="sections">
+            <h3>Del 3: Begynn konfigurasjon av serveren</h3>
+            <div class="instruction">
+                <p class="paragraph">Begynn med å sjekke at alt under ROLES AND SERVER GROUPS er grønt, hvis ikke og det er feil under Services må du bare vente litt, muligens gå inn, høyreklikke på de individuelle servicene og trykke Start service. Hvis problemet er i et annet område trenger du å gå inn på ledetekst (command line) og skrive sfc/scannow.</p>
+                <img src="./img/img26.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå skal du konfigurere noen brukere, så gå inn på Computer Management under Tools.</p>
+                <img src="./img/img27.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Gå inn under Local Users and Groups, så gå inn på Users. Deretter høyreklikk inne i Users og trykk New User.</p>
+                <img src="./img/img28.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Fyll ut det følgende, trykk Create, så Close.</p>
+                <img src="./img/img29.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Deretter høyreklikk på din nye bruker og trykk Properties.</p>
+                <img src="./img/img30.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå velg Member Of og Add.</p>
+                <img src="./img/img31.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Skriv Administrators inn i feltet og trykk Check Names, som autofyller resten av Administrator-rollen. Så trykk Apply og Close. Jeg anbefaler også å endre navnet på Administrator-brukeren din, men dette er ikke nødvendig.</p>
+                <img src="./img/img32.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå skal vi endre server navnet, gå inn på Local Server også hva enn som står under Computer Name (for meg: WIN-783E6N5LGV2).</p>
+                <img src="./img/img33.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk Change, du kan gjerne også legge til en beskrivelse til maskinen din hvis du vil.</p>
+                <img src="./img/img34.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå navngi maskinen din, så trykk more.</p>
+                <img src="./img/img35.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Skriv inn et domenenavn, så trykk OK og restart maskinen din.</p>
+                <img src="./img/img36.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Når du er ferdig med restarten, gå inn på Local Server igjen og velg Ethernet.</p>
+                <img src="./img/img37.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Dobbelklikk Ethernet.</p>
+                <img src="./img/img38.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk Properties.</p>
+                <img src="./img/img39.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg Internet Protocol version 4 (TCP/IPv4) og trykk på Properties.</p>
+                <img src="./img/img40.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Deretter velg Use the following IP adress, fyll ut de markerte feltene og trykk OK. Deretter kryss ut vinduer til neste steg skjer.</p>
+                <div class="ipGuide">
+                    <p class="paragraph"><strong>Her er en guide på IP adresse (innenfor skole-nettverket for VMware):</strong></p>
+                    <ul>
+                        <li><strong>IP Adresse:</strong> 10.12.elevpoolnr.unikip</li>
+                        <li><strong>Subnettmaske:</strong> 255.255.255.0</li>
+                        <li><strong>Gateway:</strong> 10.12.elevpoolnr.1</li>
+                        <li><strong>DNS:</strong> 10.10.1.30</li>
+                    </ul>
+                </div>
+                <img src="./img/img41.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Når maskinen spør deg om du vil gjøre den synlig for andre maskiner, svar ja ellers vil ikke klientmaskinen vi skal sette opp senere kunne koble til serveren.</p>
+                <img src="./img/img42.png" alt="" class="img">
+            </div>
+        </section>
+
+
+        <!--------Del 4-------->
+        <section id="part4" class="sections">
+            <h3>Del 4: DNS og AD DS Installasjon</h3>
+            <div class="instruction">
+                <p class="paragraph">Trykk på Add roles and features i Dashboard.</p>
+                <img src="./img/img43.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk next helt til du kommer til Server Roles.</p>
+                <img src="./img/img44.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Huk av på DNS Server og Active Directory Domain Services, og trykk add features når den spør deg om det.</p>
+                <img src="./img/img45.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk next til du kommer til Confirm installations selections siden, og trykk Install, jeg anbefaler å bli på siden av installasjonen fordi vi ikke er ferdige her.</p>
+                <img src="./img/img46.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Når det er ferdig installert må du velge Promote this server to a domain controller.</p>
+                <img src="./img/img47.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Her må du først huke av på Add a new forest, så skrive ditt eget domenenavn, deretter trykk next.</p>
+                <img src="./img/img48.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå skriv inn et passord for domenekontrolleren din, så trykk next til du kommer til prerequisites check.</p>
+                <img src="./img/img49.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Så lenge den nederste teksten i listen er markert grønn under prerequisites check er alt bra, i så fall trykk Install. Når den er ferdig installert bør den be deg restare maskinen, gjør det slik at alt blir ordentlig satt opp.</p>
+                <img src="./img/img50.png" alt="" class="img">
+            </div>
+        </section>
+
+
+        <!--------Del 5-------->
+        <section id="part5" class="sections">
+            <h3>Del 5: Installer DHCP Server</h3>
+            <div class="instruction">
+                <p class="paragraph">Trykk på Add roles and features i Dashboard igjen.</p>
+                <img src="./img/img43.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Under Server Roles, huk av på DHCP server og trykk Add Features når den ber om det. Deretter trykk next til du kommer til Confirmation.</p>
+                <img src="./img/img51.png" alt="" class="img">
+            </div>
+            <div class="instrution">
+                <p class="paragraph">Trykk Install og bli på siden til det er ferdig installert.</p>
+                <img src="./img/img52.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg Complete DHCP Configuration når installasjonen er ferdig.</p>
+                <img src="./img/img53.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">På Authorization, la den stå på Use the following user's credentials, så trykk Commit og Close.</p>
+                <img src="./img/img54.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå velg DHCP under Tools.</p>
+                <img src="./img/img55.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Så åpne serveren din, høyreklikk IPv4 og velg New Scope.</p>
+                <img src="./img/img56.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå gi et Scope navn, det kan gjerne være Internal Network, men det er opp til deg.</p>
+                <img src="./img/img57.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Her bør du sette hva enn IP-en din er, og slutte den med 2 som start IP-adresse og 254 som end IP-adresse. Dette gjør at scopet distribuerer IP-adresser mellom (og inkludert) disse to punktene. Velg length 24, dette bør automatisk endre subnet til 255.255.255.0, som er riktig.</p>
+                <img src="./img/img58.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk next til du kommer hit, her velger du hvor lenge du ønsker at enheter som kobles til skal kunne forbli tilkoblet, noen tips står i teksten over konfigurasjonsfeltene.</p>
+                <img src="./img/img59.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg yes, så fortsett.</p>
+                <img src="./img/img60.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Skriv de tre første delene av IP-adressen til serveren, fulgt av tallet 1 i den siste delen av IP-en. Deretter trykk Add og next.</p>
+                <img src="./img/img61.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå kan du trykke next helt til du er ved slutten, også gjøre ferdig DHCP Server konfigurasjonen.</p>
+                <img src="./img/img62.png" alt="" class="img">
+            </div>
+        </section>
+
+
+        <!--------Del 6-------->
+        <section id="part6" class="sections">
+            <h3>Del 6: Sette opp klientmaskin for å teste kobling.</h3>
+            <div class="instruction">
+                <p class="paragraph">Lag en ny VM, gå gjennom alt helt til du kommer til Select a Guest OS, velg Microsoft Windows 10 her</p>
+                <img src="./img/img63.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Fortsett å sette ting opp helt til du kommer til ISO, der velger du en_windows_10_multi, så gjør du resten som du gjorde i serveren.</p>
+                <img src="./img/img64.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg VMware Virtual SATA CDROM Drive på boot, husk å spamme enter rett etter du har valgt det (samme som på server setup).</p>
+                <img src="./img/img65.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg ditt ønskede tastatur og språk, så fortsett og trykk Install Now.</p>
+                <img src="./img/img66.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg I don't have a product key, hvis du har en produkt key kan du skrive den inn.</p>
+                <img src="./img/img67.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Så velg Windows 10 Pro og aksepter lisensavtalen.</p>
+                <img src="./img/img68.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Hvis du ikke har noen filer du trenger på maskinen, velg Custom: Install Windows Only.</p>
+                <img src="./img/img69.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg din ønskede disk og trykk next, deretter kan du gå gjennom windows setup som vanlig helt til du kommer til det neste steget.</p>
+                <img src="./img/img70.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Når du er på Sign in with Microsoft, velg Domain join instead og sett opp en bruker, deretter bør du kunne logge på maskinen, og den bør være koblet på serveren.</p>
+                <img src="./img/img71.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Du kan sjekke om den er koblet til ved å se på hvilket nettverk du er koblet til. Hvis du er koblet til ethernet med domenenavnet til serveren er du vellykket. (Dette er DHCP serveren som automatisk kobler enheter på samme nettverk til serveren).</p>
+                <img src="./img/img72.png" alt="" class="img">
+            </div>
+        </section>
+
+        <!--------Del 7-------->
+        <section id="part7" class="sections">
+            <h3>Del 7: Setup av IIS og FTP Server</h3>
+            <div class="instruction">
+                <p class="paragraph">Igjen, velg Add Roles and Features og trykk next til du er ved server roles.</p>
+                <img src="./img/img73.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Huk av på Web Server (IIS) og trykk Add Features, deretter trykk next til du kommer til Role Services.</p>
+                <img src="./img/img74.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå huk av på FTP Service og FTP Extensibility, så trykk next, install og exit når du er ferdig.</p>
+                <img src="./img/img75.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå trykk på IIS ved siden, høyreklikk serveren din og trykk Internet Information Services (IIS) Manager.</p>
+                <img src="./img/img76.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Dermed åpne serveren din, og høyreklikk på Default Web Site under Sites. Nå trykk på Add FTP Publishing.</p>
+                <img src="./img/img77.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Her bør det være en automatisk IP-adresse som du kan velge under Binding seksjonen, velg den, også huk av på No SSL under SSL seksjonen, så trykk next.</p>
+                <img src="./img/img78.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">På Authentication and Authorization Information må du huke av på basic authentication, velge Specified roles or user groups, skrive Administrators, og huke av på Read og Write. Dette gjør at brukere under rollen Administrators kan få tilgang til FTP serveren.</p>
+                <img src="./img/img79.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå velg FTP Firewall Support, her skal vi gjøre at FTP Serveren vil ta imot tilkoblinger eksternt.</p>
+                <img src="./img/img80.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Legg inn radiusen 60000-60100 og trykk Apply, da vil den be deg endre brannmuren for å akseptere tilkoblinger fra utsiden.</p>
+                <img src="./img/img81.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Søk opp firewall på pcen din og gå inn på Windows Defender Firewall with Advanced Security.</p>
+                <img src="./img/img82.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Gå til Inbound Rules og velg New Rule.</p>
+                <img src="./img/img83.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Huk av på port, så trykk next.</p>
+                <img src="./img/img84.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Under Specific local ports, skriv inn 21, 60000-60100, 21 er porten på FTP serveren.</p>
+                <img src="./img/img85.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Trykk next helt til du kommer til name der du må navngi reglen. Du kan godt navngi den FTP Inbound Port Rule eller noe lignende.</p>
+                <img src="./img/img86.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Nå gå inn på Service under Tools.</p>
+                <img src="./img/img87.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Finn Microsoft FTP Service og restart den, da bør FTP serveren fungere riktig.</p>
+                <img src="./img/img88.png" alt="" class="img">
+            </div>
+            <!--video for seksjonen-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_uLl_OFB8z0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        
+
+        <!--------Del 8-------->
+        <section id="part8" class="sections">
+            <h3>Del 8: FTP tilkobling gjennom FileZilla</h3>
+            <div class="instruction">
+                <p class="paragraph">Dette er svært simpelt, bare trykk på ikonet øverst til venstre.</p>
+                <img src="./img/img89.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Velg New site og navngi den et passende navn.</p>
+                <img src="./img/img90.png" alt="" class="img">
+            </div>
+            <div class="instruction">
+                <p class="paragraph">Sett opp instillingene som de er vist på bildet [protokoll: FTP, kryptering: bare bruk FTP, innloggingstype: normal] mens du logger inn på en bruker i Administrators gruppen. Da bør du bli logget inn, og filer kan bli sendt mellom serveren og maskinen du er på.</p>
+                <img src="./img/img91.png" alt="" class="img">
+                <p style="margin-top: 10px;">Da er du ferdig med guiden og har satt opp Windows Server for nettsider, gratulerer!</p>
+            </div>
+            <!--video for seksjonen-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vNuhG_ErkSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        
+        <!--------Quiz--------->
+        <div class="quizBackground"></div>
+        <form id="quiz">
+            <!--question 1-->
+            <div class="questionDiv selectedQuestion">
+                <h3 class="quizTitle">1: Hvorfor må vi gjøre serveren synlig for andre maskiner på nettverket?</h3>
+                <div class="answerDiv">
+                    <input type="radio" name="q1" id="A1" value="A1" checked>
+                    <label for="A1">Det er fordi serveren må være synlig for ruteren for å koble til nettet.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q1" id="A2" value="A2">
+                    <label for="A2">Det er feil, serveren må være frakoblet for sikkerhetsgrunner.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q1" id="A3" value="A3">
+                    <label for="A3">Det er fordi andre maskiner på nettverket må kunne koble til serveren.</label>
+                </div>
+            </div>
+
+            <!--question 2-->
+            <div class="questionDiv">
+                <h3 class="quizTitle">2: Hva trenger vi en DHCP server for?</h3>
+                <div class="answerDiv">
+                    <input type="radio" name="q2" id="B1" value="B1" checked>
+                    <label for="B1">For å automatisk koble alle maskinene som er på nettverket til serveren.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q2" id="B2" value="B2">
+                    <label for="B2">For å kunne laste ned filer fra andre enheter på nettverket.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q2" id="B3" value="B3">
+                    <label for="B3">For å kunne sende programmer til alle maskinene på nettverket samtidig.</label>
+                </div>
+            </div>
+
+            <!--question 3-->
+            <div class="questionDiv">
+                <h3 class="quizTitle">3: Hva står IIS for?</h3>
+                <div class="answerDiv">
+                    <input type="radio" name="q3" id="C1" value="C1" checked>
+                    <label for="C1">Information Interconnection Server</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q3" id="C2" value="C2">
+                    <label for="C2">Information Iteration Software</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q3" id="C3" value="C3">
+                    <label for="C3">Internet Information Services</label>
+                </div>
+            </div>
+
+            <!--quesiton 4-->
+            <div class="questionDiv">
+                <h3 class="quizTitle">4: Hva brukes FTP servere for?</h3>
+                <div class="answerDiv">
+                    <input type="radio" name="q4" id="D1" value="D1" checked>
+                    <label for="D1">Laste opp filer til internettet gjennom ruteren.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q4" id="D2"
+                    value="D2">
+                    <label for="D2">Overføre filer fra en maskin til en annen på en trygg måte.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q4" id="D3" value="D3">
+                    <label for="D3">Laste ned filer fra internettet trygt.</label>
+                </div>
+            </div>
+
+            <!--question 5-->
+            <div class="questionDiv">
+                <h3 class="quizTitle">5: Hva er den viktigste grunnen til å ha forskjellige brukere og grupper?</h3>
+                <div class="answerDiv">
+                    <input type="radio" name="q5" id="E1" value="E1" checked>
+                    <label for="E1">Sikkerhetsgrunner, hvis alle bruker samme bruker/gruppe med samme rettigheter blir sikkerhetsrisikoen ved et cyberangrep mye høyere.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q5" id="E2" value="E2">
+                    <label for="E2">Organisering, hvis alle bruker samme bruker vil det blir svært vanskelig å organisere og identifisere hvem som er hvem, og hvem som skal hva.</label>
+                </div>
+                <div class="answerDiv">
+                    <input type="radio" name="q5" id="E3" value="E3">
+                    <label for="E3">Det er ikke viktig, med en god brannmur er serveren og nettverket helt sikkert, derfor er intern sikkerhet en bortkastning av tid og ressurser som kunne blitt brukt på bedre ting.</label>
+                </div>
+            </div>
+            <h2 class="quizResult"></h2>
+            <div class="quizButtons">
+                <button class="quizExit">Stopp Quiz</button>
+                <button class="quizNext">Neste Spørsmål</button>
+            </div>
+        </form>
+
+        <footer id="footer">
+            <div class="footerTop">
+                <button class="gap previous hide"><</button>
+                <button class="gap next">Neste Seksjon [Del 2: Windows Setup] ></button>
+            </div>
+            <div class="footerBottom">
+                <h3>Kontaktinformasjon</h3>
+                <p>Email:   aksel4455@gmail.com</p>
+                <p>GitHub:  <a href="https://github.com/Akselja" target="_blank">https://github.com/Akselja</a></p>
+            </div>
+        </footer>
+    </main>
+
+    
+</body>
+</html>
